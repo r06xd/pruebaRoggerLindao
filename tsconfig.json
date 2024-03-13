@@ -2,6 +2,18 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "paths": {
+      "@guard/*":["./src/app/core/guards/*"],
+      "@shared/*": ["./src/app/shared/*"],
+      "@pages/*":["./src/app/pages/*"],
+      "@mapper/*":["./src/app/core/mappers/*"],
+      "@model/*":["./src/app/core/models/*"],
+      "@service/*":["./src/app/core/services/*"],
+      "@views/*":["./src/app/views/*"],
+      "@enums/*":["./src/app/core/enums/*"],
+      "@pipes/*":["./src/app/core/pipes/*"],
+      "@directives/*":["./src/app/core/directives/*"],
+    },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,

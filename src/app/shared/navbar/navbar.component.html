@@ -1,0 +1,10 @@
+<nav class="mt-10">
+  @for (item of menu; track item) {
+    <button
+      class="flex items-center px-6 py-2 mt-4 text-gray-100 bg-opacity-25"
+      (click)="selectMenu($index)"
+    >
+      <span class="mx-3"> {{ item.title }} </span>
+    </button>
+  }
+</nav>
