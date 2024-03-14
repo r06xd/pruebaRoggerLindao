@@ -13,6 +13,7 @@
       "@enums/*":["./src/app/core/enums/*"],
       "@pipes/*":["./src/app/core/pipes/*"],
       "@directives/*":["./src/app/core/directives/*"],
+      "@interfaces/*":["./src/app/core/interfaces/*"],
     },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,

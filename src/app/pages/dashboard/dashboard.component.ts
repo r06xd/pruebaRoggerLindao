@@ -9,7 +9,7 @@ import { views } from '../../views/views';
   standalone: true,
   imports: [CommonModule, NavbarComponent, HeaderDashboardComponent, ...views],
   templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.scss'
+  styleUrl: './dashboard.component.scss',
 })
 export class DashboardComponent {
   indexMenuSelected: number = 0;
