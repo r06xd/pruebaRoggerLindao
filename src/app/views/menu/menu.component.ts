@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
+import { NgIconComponent, provideIcons } from '@ng-icons/core';
+import { octPlus } from '@ng-icons/octicons';
 
 @Component({
-  selector: 'app-menu',
+  selector: 'menu',
   standalone: true,
-  imports: [],
+  imports: [NgIconComponent],
   templateUrl: './menu.component.html',
-  styleUrl: './menu.component.scss'
+  styleUrl: './menu.component.scss',
+  viewProviders: [provideIcons({ octPlus })]
 })
 export class MenuComponent {
 
