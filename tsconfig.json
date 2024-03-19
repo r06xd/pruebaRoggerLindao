@@ -2,9 +2,9 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    // "baseUrl": "./src",
     "paths": {
       "@guard/*":["./src/app/core/guards/*"],
-      "@shared/*": ["./src/app/shared/*"],
       "@pages/*":["./src/app/pages/*"],
       "@mapper/*":["./src/app/core/mappers/*"],
       "@model/*":["./src/app/core/models/*"],

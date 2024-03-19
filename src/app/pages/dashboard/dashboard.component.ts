@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { HeaderDashboardComponent } from '@shared/header-dashboard/header-dashboard.component';
-import { NavbarComponent } from '@shared/navbar/navbar.component';
 import { views } from '../../views/views';
+import { NavbarComponent } from '../../shared/navbar/navbar.component';
+import { HeaderDashboardComponent } from '../../shared/header-dashboard/header-dashboard.component';
 
 @Component({
   selector: 'dashboard',

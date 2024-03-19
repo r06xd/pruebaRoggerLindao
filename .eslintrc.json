@@ -68,7 +68,8 @@
         "@typescript-eslint/semi":"error",
         "@angular-eslint/prefer-standalone-component": [
           "error"
-        ]
+        ],
+        "arrow-parens": "error"
       }
     },
     {
