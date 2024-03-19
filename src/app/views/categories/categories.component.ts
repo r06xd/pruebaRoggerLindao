@@ -19,4 +19,11 @@ export class CategoriesComponent {
   showFormFn(): void {
     this.showForm = !this.showForm;
   }
+
+  addDataFn(category: Categories): void {
+    category.id = this.categories.length + 1;
+    // this.categories.push(category);
+    this.categories = [...this.categories, category];
+    this.showForm = false;
+  }
 }

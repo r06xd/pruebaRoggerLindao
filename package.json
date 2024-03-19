@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "local-api": "json-server --port 5000 --watch ./db.json"
   },
   "private": true,
   "dependencies": {
@@ -42,6 +43,7 @@
     "@ng-icons/tabler-icons": "^27.2.0",
     "@ng-icons/typicons": "^27.2.0",
     "@ng-icons/ux-aspects": "^27.2.0",
+    "json-server": "^1.0.0-alpha.23",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"

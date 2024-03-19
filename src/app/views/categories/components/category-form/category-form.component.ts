@@ -1,11 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { fieldsComponents } from '../../../../shared/fields/fields-components';
 import { Categories } from '@interfaces/categories/categories';
+import { fieldsComponents } from '../../../../shared/fields/fields-components';
 
 type FormData = {
-  [key in keyof Categories]: FormControl<Categories[key] | null>
+  [key in keyof Categories]: FormControl<Categories[key] | unknown>
 };
 
 @Component({
@@ -16,7 +16,7 @@ type FormData = {
   styleUrl: './category-form.component.scss'
 })
 export class CategoryFormComponent {
-  @Output() hide: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Output() addData: EventEmitter<Categories> = new EventEmitter<Categories>();
 
   form: FormGroup<FormData> = new FormGroup<FormData>({
     id: new FormControl({ value: 0, disabled: true }),
@@ -27,6 +27,11 @@ export class CategoryFormComponent {
 
 
   constructor() {
+  }
+
+  saveData(): void {
+    const data = this.form.getRawValue();
+    this.addData.next(data as Categories);
   }
 
 }

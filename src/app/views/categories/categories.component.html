@@ -17,7 +17,7 @@
     </div>
     @if (showForm) {
       <div class="col-span-1">
-        <category-form (hide)="showForm = $event"></category-form>
+        <category-form (addData)="addDataFn($event)"></category-form>
       </div>
     }
   </section>
