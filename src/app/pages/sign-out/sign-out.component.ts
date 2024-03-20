@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
   templateUrl: './sign-out.component.html',
   styleUrl: './sign-out.component.scss'
 })
-export class SignOutComponent {
+export default class SignOutComponent {
 
 }

@@ -15,7 +15,7 @@ import { CommonModule } from '@angular/common';
   viewProviders: [provideIcons({ octEye })],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CustomersComponent {
+export default class CustomersComponent {
   customers = signal<Customer[]>(new CustomerService().getAllCustomers());
   showForm = signal<boolean>(false);
 

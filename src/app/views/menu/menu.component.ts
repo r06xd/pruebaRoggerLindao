@@ -10,6 +10,6 @@ import { octPlus } from '@ng-icons/octicons';
   styleUrl: './menu.component.scss',
   viewProviders: [provideIcons({ octPlus })]
 })
-export class MenuComponent {
+export default class MenuComponent {
 
 }

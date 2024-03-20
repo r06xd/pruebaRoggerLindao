@@ -40,14 +40,15 @@
         </div>
       </div>
 
-      <navbar (menuSelected)="indexMenuSelected = $event" />
+      <!-- <navbar (menuSelected)="indexMenuSelected = $event" /> -->
+      <navbar />
     </div>
     <div class="flex flex-col flex-1 overflow-hidden">
       <header-dashboard></header-dashboard>
       <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-200">
         <div class="container px-6 py-8 mx-auto">
           <div class="h-[500px] w-full">
-            @if (indexMenuSelected === 0) {
+            <!-- @if (indexMenuSelected === 0) {
               <categories />
             } @else if (indexMenuSelected === 1) {
               <customers></customers>
@@ -55,7 +56,8 @@
               <menu></menu>
             } @else {
               <orders></orders>
-            }
+            } -->
+            <router-outlet></router-outlet>
           </div>
         </div>
       </main>

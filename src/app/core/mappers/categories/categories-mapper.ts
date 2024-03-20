@@ -10,6 +10,16 @@ export class CategoriesMapper {
             state: data.estado
         };
     }
+    static toJson(data: Categories): CategoryResponse {
+        return {
+            // eslint-disable-next-line @typescript-eslint/naming-convention
+            descripcion_categoria: data.description,
+            estado: data.state,
+            // eslint-disable-next-line @typescript-eslint/naming-convention
+            nombre_categoria: data.name,
+            id: data.id
+        };
+    }
 
 
 }

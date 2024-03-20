@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   imports: [],
   templateUrl: './sign-in.component.html',
 })
-export class SignInComponent {
+export default class SignInComponent {
 
 }

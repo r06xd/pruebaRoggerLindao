@@ -13,7 +13,7 @@
       </button>
     </div>
     <div [ngClass]="{ 'col-span-3': showForm, 'col-span-full': !showForm }">
-      <category-table [categories]="categories"></category-table>
+      <category-table [categories]="categories() ?? []"></category-table>
     </div>
     @if (showForm) {
       <div class="col-span-1">
