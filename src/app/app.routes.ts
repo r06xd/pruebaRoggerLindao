@@ -1,35 +1,13 @@
 import { Routes } from '@angular/router';
-import { CategoriesServices } from '@service/categories.service';
+import { securityGuard } from '@guard/security.guard';
+// import { securityGuard } from '@guard/security.guard';
 
 export const routes: Routes = [
     {
         path: 'dashboard',
         loadComponent: () => import('./pages/dashboard/dashboard.component'),
-        children: [
-            {
-                path: 'categories',
-                loadComponent: () => import('./views/categories/categories.component').then((m) => m.CategoriesComponent),
-                providers: [CategoriesServices]
-
-            },
-            {
-                path: 'customers',
-                loadComponent: () => import('./views/customers/customers.component'),
-            },
-            {
-                path: 'menu',
-                loadComponent: () => import('./views/menu/menu.component'),
-            },
-            {
-                path: 'orders',
-                loadComponent: () => import('./views/orders/orders.component'),
-            },
-            {
-                path: '',
-                redirectTo: 'categories',
-                pathMatch: 'full'
-            },
-        ]
+        canActivate: [securityGuard],
+        loadChildren: () => import('./pages/dashboard/dashboard.routes')
     },
     {
         path: 'sign-in',

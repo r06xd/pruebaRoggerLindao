@@ -18,9 +18,9 @@ export class CategoriesServices {
     private allCategoriesSubject: BehaviorSubject<Categories[]> = new BehaviorSubject<Categories[]>([]);
     allCategories$: Observable<Categories[]> = this.allCategoriesSubject.asObservable();
 
-    constructor() {
-        this.getAllCategories().subscribe();
-    }
+    // constructor() {
+    //     this.getAllCategories().subscribe();
+    // }
 
     getCategories(): Categories[] {
         const categoriesResponse: CategoryResponse[] = categories.map((category) => new CategoryResponse(category));

@@ -12,10 +12,10 @@
         Nueva categoria
       </button>
     </div>
-    <div [ngClass]="{ 'col-span-3': showForm, 'col-span-full': !showForm }">
+    <div [ngClass]="{ 'col-span-3': showForm(), 'col-span-full': !showForm() }">
       <category-table [categories]="categories() ?? []"></category-table>
     </div>
-    @if (showForm) {
+    @if (showForm()) {
       <div class="col-span-1">
         <category-form (addData)="addDataFn($event)"></category-form>
       </div>
