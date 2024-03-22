@@ -6,7 +6,7 @@ import { delay, map } from 'rxjs';
 export const resolverCategoryResolver: ResolveFn<boolean> = (route, state) => {
   const categoryService = inject(CategoriesServices);
   return categoryService.getAllCategories().pipe(
-    delay(3000),
+    // delay(3000),
     map(() => true)
   );
 };

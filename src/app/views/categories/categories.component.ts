@@ -5,11 +5,13 @@ import { CategoriesServices } from '@service/categories.service';
 import { categoriesComponents } from './components/categories-components';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute } from '@angular/router';
+import { ColorDirective } from '@directives/color.directive';
+import { ActiveWordMayusPipe } from '@pipes/active-word-mayus.pipe';
 
 @Component({
   selector: 'categories',
   standalone: true,
-  imports: [CommonModule, ...categoriesComponents],
+  imports: [CommonModule, ...categoriesComponents, ColorDirective, ActiveWordMayusPipe],
   templateUrl: './categories.component.html',
   styleUrl: './categories.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

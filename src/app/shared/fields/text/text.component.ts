@@ -2,6 +2,7 @@ import { Component, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FieldBaseComponent } from '../field-base/field-base.component';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { UpperCaseDirective } from '@directives/upper-case.directive';
 
 enum InputType {
   text = 'text',
@@ -13,7 +14,7 @@ enum InputType {
 @Component({
   selector: 'text',
   standalone: true,
-  imports: [CommonModule, FieldBaseComponent, ReactiveFormsModule],
+  imports: [CommonModule, FieldBaseComponent, ReactiveFormsModule, UpperCaseDirective],
   templateUrl: './text.component.html',
   styleUrl: './text.component.scss'
 })
@@ -32,5 +33,7 @@ export class TextComponent {
   controlName = input<string>();
   fGroup = input<FormGroup>();
   control = input<FormControl<unknown>>();
+
+  activeUpercase = input<boolean>();
 
 }

@@ -7,7 +7,7 @@ export const securityGuard: CanActivateFn = (route, state) => {
   const isAuthenticated = localStorage.getItem('isAuthenticated') === 'true';
 
   return of(isAuthenticated).pipe(
-    delay(3000),
+    // delay(3000),
     tap((isAuthenticated) => {
       if (!isAuthenticated) {
         router.navigateByUrl('/login');

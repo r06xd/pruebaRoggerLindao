@@ -5,6 +5,7 @@ import { CategoriesMapper } from '@mapper/categories/categories-mapper';
 import { inject, Injectable } from '@angular/core';
 import { BehaviorSubject, delay, map, Observable, tap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../environments/environment';
 
 type BaseResponse = {
     [key: string]: unknown;
@@ -18,6 +19,8 @@ export class CategoriesServices {
     private allCategoriesSubject: BehaviorSubject<Categories[]> = new BehaviorSubject<Categories[]>([]);
     allCategories$: Observable<Categories[]> = this.allCategoriesSubject.asObservable();
 
+    apiUrl = environment.apiUrl;
+
     // constructor() {
     //     this.getAllCategories().subscribe();
     // }
@@ -30,9 +33,9 @@ export class CategoriesServices {
 
     getAllCategories(): Observable<Categories[]> {
 
-        return this.httpClient.get<BaseResponse[]>('http://localhost:5000/categoria')
+        return this.httpClient.get<BaseResponse[]>(this.apiUrl + '/categoria')
             .pipe(
-                delay(5000),
+                // delay(5000),
                 map((response: BaseResponse[]) => response.map((category) => new CategoryResponse(category))),
                 map((response: CategoryResponse[]) => response.map((category) => CategoriesMapper.map(category))),
                 map((response) => response.map((categories) => ({ ...categories, name: categories.name + '  jorlan ' }))),
@@ -41,7 +44,7 @@ export class CategoriesServices {
     }
 
     postNewCategory(bodyRequest: Categories): Observable<boolean> {
-        return this.httpClient.post('http://localhost:5000/categoria', CategoriesMapper.toJson(bodyRequest))
+        return this.httpClient.post(this.apiUrl + '/categoria', CategoriesMapper.toJson(bodyRequest))
             .pipe(
                 tap((response) => console.log(response)),
                 map(() => {

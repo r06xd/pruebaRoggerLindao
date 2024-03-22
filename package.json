@@ -8,7 +8,9 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
-    "local-api": "json-server --port 5000 --watch ./db.json"
+    "local-api": "json-server --port 5000 --watch ./db.json",
+    "build-prod": "ng build --output-hashing=all --configuration production",
+    "build-testing": "ng build --output-hashing=all --configuration testing"
   },
   "private": true,
   "dependencies": {
