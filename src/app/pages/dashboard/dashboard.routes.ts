@@ -28,6 +28,10 @@ const routes: Routes = [
         loadComponent: () => import('../../views/orders/orders.component'),
     },
     {
+        path: 'defer',
+        loadComponent: () => import('../../views/defer/defer.component'),
+    },
+    {
         path: '',
         redirectTo: 'categories',
         pathMatch: 'full'
