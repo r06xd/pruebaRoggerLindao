@@ -1,6 +1,9 @@
 import { Routes } from '@angular/router';
 import { CategoriesServices } from '@service/categories.service';
 import { resolverCategoryResolver } from '../../core/resolvers/resolver-category.resolver';
+import { MenuService } from '@service/menu.service';
+import { resolverMenuResolver } from '../../core/resolvers/resolver-menu.resolver';
+import { menusSecurityGuard } from '@guard/menus-security.guard';
 
 const routes: Routes = [
     {
@@ -22,14 +25,19 @@ const routes: Routes = [
     {
         path: 'menu',
         loadComponent: () => import('../../views/menu/menu.component'),
+        providers: [MenuService],
+        resolve: { menu: resolverMenuResolver } ,
+        canActivate : [menusSecurityGuard]
+    },
+    {
+        path: 'menu/:id',
+        loadComponent: () => import('../../views/menu/menu.component'),
+        providers: [MenuService],
+        resolve: { menu: resolverMenuResolver } 
     },
     {
         path: 'orders',
         loadComponent: () => import('../../views/orders/orders.component'),
-    },
-    {
-        path: 'defer',
-        loadComponent: () => import('../../views/defer/defer.component'),
     },
     {
         path: '',
